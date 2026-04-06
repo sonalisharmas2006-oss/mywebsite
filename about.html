@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <link rel="stylesheet" href="style2.css">
+</head>
+
+<body>
+    <header class="navbar">
+    <div class="nav-left">
+        <a href="home.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+    </div>
+
+    <div class="nav-right">
+        <span class="logo">Student Help Hub</span>
+    </div>
+    <a href="#" onclick="logout()">Logout</a>
+</header>
+
+    <section class="section">
+        <div class="container">
+
+            <div class="content-section">
+                <div class="title">
+                    <h1>About Us</h1>
+                </div>
+                <div class="content">
+                    <h3>This system authentication platform is designed to provide secure login
+                        access using modern web technologies. It ensures data privacy,
+                        user verification, and efficient system control.</h3>
+                    <p>
+                        Our platform integrates efficient login validation, user verification processes, and secure
+                        session handling to prevent unauthorized access. It is built using modern web technologies
+                        such as HTML, CSS, and JavaScript, ensuring both performance and scalability. The system is
+                        designed to be user-friendly while maintaining high standards of security.
+                    </p>
+                    <div class="button">
+                        <a href="readme.html">Read More</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="image-section">
+                <img src="Aboutpage.jpg" alt="About Image">
+            </div>
+        </div>
+        <br>
+        <footer class="footer">
+    <div class="footer-container">
+        <div class="footer-section">
+            <h2>Contact Us</h2>
+            <p>Email: "authx.innovators@example.com"</p>
+            <p>Phone: +91 12345 67890</p>
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+        <p>© 2026 Your Website | All Rights Reserved</p>
+    </div>
+</footer>
+    </section>
+    <script>
+function logout(){
+    localStorage.removeItem("loggedInUser");
+    window.location.href = "index.html";
+}
+</script>
+
+</body>
+
+</html>

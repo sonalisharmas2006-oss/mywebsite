@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Dashboard - Student Help Hub</title>
+<link rel="stylesheet" href="home.css">
+<style>
+body {
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: #333;
+}
+.container {
+  max-width: 1100px;
+  margin: 40px auto;
+  padding: 20px;
+}
+.welcome {
+  color: white;
+  margin-bottom: 20px;
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+.card {
+  background: white;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+input, textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+button {
+  padding: 10px 15px;
+  background: #667eea;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #5a67d8;
+}
+
+/* LIST */
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  background: #f3f4f6;
+  margin: 5px 0;
+  padding: 10px;
+  border-radius: 8px;
+}
+</style>
+</head>
+
+<body>
+   <header class="navbar">
+    <div class="nav-left">
+        <a href="home.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+    </div>
+
+    <div class="nav-right">
+        <span class="logo">Student Help Hub</span>
+    </div>
+    <a href="#" onclick="logout()">Logout</a>
+</header>
+
+<div class="container">
+
+  <!-- WELCOME -->
+  <div class="welcome">
+    <h1 id="welcomeText">Welcome 👋</h1>
+    <p>Your personal productivity dashboard</p>
+  </div>
+
+  <!-- GRID -->
+  <div class="grid">
+
+    <!-- TASK -->
+    <div class="card">
+      <h2>📌 Task Tracker</h2>
+      <input placeholder="Add task">
+      <button>Add</button>
+      <ul>
+        <li>Complete Hackathon Project ✔</li>
+        <li>Study for Exam</li>
+      </ul>
+    </div>
+
+    <!-- NOTES -->
+    <div class="card">
+      <h2>📝 Notes</h2>
+      <textarea placeholder="Write note"></textarea>
+      <button>Save</button>
+      <ul>
+        <li>Update UI design</li>
+      </ul>
+    </div>
+
+    <!-- ECOMMERCE -->
+    <div class="card">
+      <h2>🛒 Mini Store</h2>
+      <input placeholder="Add item">
+      <button>Add</button>
+      <ul>
+        <li>Python Book</li>
+      </ul>
+    </div>
+
+  </div>
+
+</div>
+<script>
+let user = localStorage.getItem("loggedInUser");
+
+if(user){
+    document.getElementById("welcomeText").innerText = "Welcome, " + user + " 👋";
+} else {
+    window.location.href = "login.html";
+}
+</script>
+<script>
+function logout(){
+    localStorage.removeItem("loggedInUser");
+    window.location.href = "index.html";
+}
+</script>
+</body>
+</html>
